@@ -11,12 +11,23 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        /*
-        // put your code here
-        echo '<pre>';
-        print_r($_SERVER);
-        echo '<pre>';
-         * */
+        if(isset($_COOKIE['restrito'])){
+            echo 'Valor armazenado:' . $_COOKIE['restrito'];
+        }
+        else {
+                echo 'não existe o cookie restrito';
+        }
+        echo '<br>';
+        if(isset($_COOKIE['aula'])){
+            echo 'Valor armazenado:' . $_COOKIE['aula'];
+            
+        }
+        
+        else{
+                echo 'não existe o cookie aula';
+        }
+        
+        print_r($_COOKIE['aula']);
         
         ?>
     </body>
