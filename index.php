@@ -11,7 +11,14 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        /*
         // put your code here
+        echo '<pre>';
+        print_r($_SERVER);
+        echo '<pre>';
+         * */
+        
         ?>
+        
     </body>
 </html>
