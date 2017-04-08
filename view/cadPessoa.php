@@ -16,7 +16,7 @@ function __autoload($class) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>phpOO - Orientado a Objeto</title>
+        <title>SETAC²</title>
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ function __autoload($class) {
             <header>
                 <img src="imagens/logo.png"/>
                 <div class="well">
-                    <h1 class="text-center">PhpOO Crud - Orientado a Objeto -> <span class="text-primary">ComercioCursos.com.br</span></h1>
+                    <h1 class="text-center">SETAC²<span class="text-primary">UTFPR -SANTA HELENA</span></h1>
                 </div>
             </header>
 
