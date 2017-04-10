@@ -50,7 +50,7 @@ function __autoload($class) {
                     $cpf = $_POST['cpf'];
                     $documento = $_POST['documento'];
                     $tipo = $_POST['tipo'];
-                    
+
                     $pessoa->setNome($nome);
                     $pessoa->setCpf($cpf);
                     $pessoa->setIdentificacao($documento);

@@ -7,17 +7,18 @@
  */
 
 namespace config;
+
 require_once 'config.php';
 
 class DB {
-    
+
     private static $instance;
-    
+
     function __construct() {
         
     }
 
-        public static function getInstance() {
+    public static function getInstance() {
         if (!isset(self::$instance)) {
             try {
                 self::$instance = new \PDO('mysql:host=' . HOST . '; dbname=' . BASE, USER, PASS);
@@ -33,4 +34,5 @@ class DB {
     public static function prepare($sql) {
         return self::getInstance()->prepare($sql);
     }
+
 }

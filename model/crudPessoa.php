@@ -7,11 +7,13 @@
  */
 
 namespace model;
+
 use config;
 require_once './config/DB.php';
 
 
 abstract class crudPessoa extends config\DB {
+
     private $tabela;
     private $nome;
     private $tipo;
@@ -19,47 +21,46 @@ abstract class crudPessoa extends config\DB {
     private $cpf;
     private $dtNasc;
 
-
-    public function getNome(){
+    public function getNome() {
         return $this->nome;
     }
-    
-    public function setNome($nome){
+
+    public function setNome($nome) {
         $this->nome = $nome;
     }
-    
-    public function getCpf(){
+
+    public function getCpf() {
         return $this->cpf;
     }
-    
-    public function setCpf($cpf){
+
+    public function setCpf($cpf) {
         $this->cpf = $cpf;
     }
-    
-    public function getDtNasc(){
+
+    public function getDtNasc() {
         return $this->dtNasc;
     }
-    
-    public function setDtNasc($dtNasc){
+
+    public function setDtNasc($dtNasc) {
         $this->dtNascc = $dtNasc;
     }
-    
-    public function getIdentificacao(){
+
+    public function getIdentificacao() {
         return $this->identificacao;
     }
-    
-    public function setIdentificacao($identificacao){
-        $this->identificacao= $identificacao;
+
+    public function setIdentificacao($identificacao) {
+        $this->identificacao = $identificacao;
     }
-    
-    public function getTipo(){
+
+    public function getTipo() {
         return $this->tipo;
     }
-    
-    public function setTipo($tipo){
+
+    public function setTipo($tipo) {
         $this->tipo = $tipo;
     }
-    
+
     function __construct() {
         
     }

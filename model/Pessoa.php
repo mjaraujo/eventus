@@ -18,24 +18,23 @@ use config;
 require_once 'crudPessoa.php';
 
 class Pessoa extends crudPessoa {
-    
+
     function __construct() {
         
     }
 
-    
     protected $tabela = 'pessoas';
-    
-    public function insert(){
+
+    public function insert() {
         $sql = "INSERT INTO $this->tabela (pesNome, pesTipo, pesIdentificacao, pesCPF) 
-            values(:pesNome, :pesTipo, :pesIdentificacao, :pesCPF)"; 
+            values(:pesNome, :pesTipo, :pesIdentificacao, :pesCPF)";
         $stm = config\DB::prepare($sql);
-        $stm->bindParam(':pesNome',$this->getNome());
-        $stm->bindParam(':pesTipo',$this->getTipo());
-        $stm->bindParam(':pesCPF',$this->getCpf());
-        $stm->bindParam(':pesIdentificacao',$this->getIdentificacao());
+        $stm->bindParam(':pesNome', $this->getNome());
+        $stm->bindParam(':pesTipo', $this->getTipo());
+        $stm->bindParam(':pesCPF', $this->getCpf());
+        $stm->bindParam(':pesIdentificacao', $this->getIdentificacao());
         return $stm->execute();
     }
-    
+
     //put your code here
 }
