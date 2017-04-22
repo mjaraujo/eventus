@@ -1,10 +1,7 @@
 <?php
-//    use model;
-include_once './model/Pessoa.php';
 
 function __autoload($class) {
-    //   echo 'classes/' . $class . '.php <br><br>';
-    // require_once  $class . '.php';
+    require_once $class . '.php';
 }
 ?>
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ function __autoload($class) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Quasar - MultiPurpose Template, Landing Page, Single Page Template, One Page Template</title>
+        <title>SeTAC² - Semana Tecnológica Acadêmica de Ciência da Computação</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -65,9 +62,8 @@ function __autoload($class) {
                         <li><a href="#Section-1">Programação</a></li>
                         <li><a href="#Section-2">Inscrições</a></li>
                         <li><a href="#Section-3">Galeria</a></li>
-                        <li><a href="#Section-4">Anais</a></li>
-                        <li><a href="#Section-5">Minicursos</a></li>
-                        <li><a href="#Section-6">Contato</a></li>
+                        <li><a href="#Section-4">Chamada</a></li>
+                        <li><a href="#Section-5">Contato</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -186,47 +182,37 @@ function __autoload($class) {
             <div class="container demo-3">
                 <div class="row">
                     <div class="page-header text-center col-sm-12 col-lg-12 animated fade">
-                        <h1>Gallery</h1>
+                        <h1>Inscrições abertas!</h1>
                         <p class="lead">
-                            What customers say about our Product
+                            Não perca tempo, os primeiros 30 inscritos ganharão uma camista da IV SeTAC².
                         </p>
                     </div>
                 </div>
                 <div class="row animated fadeInUpNow">
-                    <div class="col-sm-12 col-lg-12">
-                        <ul class="grid cs-style-4">
-                            <legend>Formulário Cadastrar</legend>
-                            <form class="form-inline" method="post" action="controller/cadPessoa.php">
-                                <div class="input-group">
-                                    <span class="input-group-addon glyphicon glyphicon-user">Usuário:</span>
-                                    <input name="nome" type="text" class="form-control" required >
-                                </div>
+                    <div class="col-lg-8 col-md-offset-2" style="width: 500px">
 
-                                <div class="input-group">
-                                    <span class="input-group-addon">CPF:</span>
+                        <legend class="h3">Formulário de inscrição</legend>
+                        <form method="post" action="controller/cadPessoa.php" target="new" name="frmInsc" id="frmInsc">
+                            <input name="nome" class="col-lg-6 leftradius" size="50" type="text" id="nome"  placeholder="Nome Completo">
+                            <div>
+                                <fieldset style="width: 500px">
+                                    <p><select name="tipo" id="tipo"  class="col-lg-6 leftradius">
+                                            <option value=-1>Tipo</option>
+                                            <option value=0>Aluno</option>
+                                            <option value=1>Organizador</option>
+                                            <option value=2>Palestrante</option>
+                                            <option value=3>Visitante</option>
+                                        </select>
+                                </fieldset>
+                            </div>
+                            <input name="cpf" type="number"  class="col-lg-6 leftradius" placeholder="CPF" required>
+                            <input name="documento" type="text"  class="col-lg-6 leftradius" placeholder="RG" required>
+                            <input name="senha" type="password" class="form-control" placeholder="senha">
 
-                                    <input name="cpf" type="number" class="form-control">
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">Documento:</span>
+                            <input name="cadastrar" type="submit" class="btn btn-success" value="Cadastrar">
+                        </form>
 
-                                    <input name="documento" type="text" class="form-control">
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">Tipo:</span>
 
-                                    <input name="tipo" type="text" class="form-control">
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">Senha:</span>
-
-                                    <input name="senha" type="password" class="form-control">
-                                </div>
-
-                                <input name="cadastrar" type="submit" class="btn btn-success" value="Cadastrar">
-                            </form>
-
-                        </ul>
                     </div>
                 </div>
             </div>

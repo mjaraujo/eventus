@@ -9,7 +9,7 @@
 namespace model;
 
 use config;
-require_once './config/DB.php';
+include_once '../config/DB.php';
 
 
 abstract class crudPessoa extends config\DB {

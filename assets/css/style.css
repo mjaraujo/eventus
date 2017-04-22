@@ -133,7 +133,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=1);
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);
     width:100%;
     height:100%;
     opacity:0.05;
@@ -152,7 +152,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=2);
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);
     -webkit-background-size:cover !Important;
     -moz-background-size:cover !Important;
     -o-background-size:cover !Important;
@@ -170,7 +170,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=3);
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);
     -webkit-background-size:cover !Important;
     -moz-background-size:cover !Important;
     -o-background-size:cover !Important;
@@ -189,7 +189,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=4);
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);
     -webkit-background-size:cover !Important;
     -moz-background-size:cover !Important;
     -o-background-size:cover !Important;
@@ -207,7 +207,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=5);
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);
     width:100%;
     height:100%;
     opacity:0.08;
@@ -225,7 +225,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    background-image:url(http://unsplash.it/1600/1400?random=6);	 
+    background-image:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg);	 
     width:100%;
     height:100%;
     opacity:0.04;
@@ -605,6 +605,21 @@ input,button,select,textarea {
     border: 1px solid #373737;
     color: #999;
 }
+#frmInsc input[type="text"],#frmInsc textarea {
+    background:rgba(0,0,0,0.2);
+    border: 1px solid #373737;
+    color: #999;
+}
+#frmInsc input[type="number"],#frmInsc textarea {
+    background:rgba(0,0,0,0.2);
+    border: 1px solid #373737;
+    color: #999;
+}
+#frmInsc select[name="tipo"],#frmInsc textarea {
+    background:rgba(0,0,0,0.2);
+    border: 1px solid #373737;
+    color: #999;
+}
 
 /* ==== Intro ==== */
 #slide_1 {
@@ -624,7 +639,7 @@ input,button,select,textarea {
     position:absolute;
     top:0;
     left:0;
-    background:url(http://www.wowthemes.net/demo/quasar/assets/img/slide_1.jpg) fixed no-repeat;
+    background:url(http://src.odiario.com/Imagem/2014/12/27/g_utfpr-5.jpg) fixed no-repeat;
     width:100%;
     height:100%;
     opacity:0.1;
