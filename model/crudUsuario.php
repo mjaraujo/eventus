@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Description of Pessoa
  *
@@ -8,9 +9,7 @@
 
 namespace model;
 
-use config;
-
-include_once '../config/DB.php';
+require_once 'config/DB.php';
 
 abstract class crudUsuario extends config\DB {
 

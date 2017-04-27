@@ -1,6 +1,6 @@
 <?php
 //    use model;
-include_once ('../model/Pessoa.php');
+include_once ('../model/Usuario.php');
 
 function __autoload($class) {
     //   echo 'classes/' . $class . '.php <br><br>';
@@ -10,22 +10,18 @@ function __autoload($class) {
 
 
 <?php
-$usuario = new model\Pessoa();
+
 
 // Cadastro de Usuario
-if (isset($_POST['cadastrar'])):
+if (isset($_POST['cadastrarUsuario'])):
 
-    $nome = $_POST['nome'];
+    $userName = $_POST['userName'];
     $senha = $_POST['senha'];
-    $cpf = $_POST['cpf'];
-    $documento = $_POST['documento'];
-    $tipo = $_POST['tipo'];
+    $nivel = $_POST['nivel'];
+    $pessoa = $_POST['pessoa'];
 
-    $usuario->setNome($nome);
-    $usuario->setCpf($cpf);
-    $usuario->setIdentificacao($documento);
-    $usuario->setTipo($tipo);
-
+    $usuario = new model\Usuario($userName, $senha, $nivel, $pessoa);
+    
     if ($usuario->insert()) {
         echo 'pessoa cadastrada!';
     }

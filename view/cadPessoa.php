@@ -40,7 +40,7 @@ function __autoload($class) {
             <div style="margin: 100px 0; text-align: center">
 
                 <?php
-                $pessoa = new model\Pessoa();
+                $usuario = new model\Pessoa();
 
                 // Cadastro de Usuario
                 if (isset($_POST['cadastrar'])):
@@ -51,12 +51,12 @@ function __autoload($class) {
                     $documento = $_POST['documento'];
                     $tipo = $_POST['tipo'];
 
-                    $pessoa->setNome($nome);
-                    $pessoa->setCpf($cpf);
-                    $pessoa->setIdentificacao($documento);
-                    $pessoa->setTipo($tipo);
+                    $usuario->setNome($nome);
+                    $usuario->setCpf($cpf);
+                    $usuario->setIdentificacao($documento);
+                    $usuario->setTipo($tipo);
 
-                    if ($pessoa->insert()) {
+                    if ($usuario->insert()) {
 
                         echo '<div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -74,7 +74,7 @@ function __autoload($class) {
 
                     $id = $_POST['id_ui'];
 
-                    $pessoa->delete($id);
+                    $usuario->delete($id);
                 }
 
                 // Alterar Usuario
@@ -83,10 +83,10 @@ function __autoload($class) {
                     $nome = $_POST['nome'];
                     $email = $_POST['email'];
 
-                    $pessoa->setNome($nome);
-                    $pessoa->setEmail($email);
+                    $usuario->setNome($nome);
+                    $usuario->setEmail($email);
 
-                    $pessoa->update($id);
+                    $usuario->update($id);
                 }
                 ?>
 
@@ -134,7 +134,7 @@ function __autoload($class) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($pessoa->findAll() as $key => $value) { ?>
+                    <?php foreach ($usuario->findAll() as $key => $value) { ?>
 
                         <tr>
                             <td> <?php echo $value->nome; ?> </td>

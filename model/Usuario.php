@@ -52,6 +52,10 @@ class Usuario extends crudUsuario {
         $this->nivel = $nivel;
     }
 
+    function setPessoa($pessoa) {
+        $this->pessoa = $pessoa;
+    }
+
     function __construct($userName, $senha, $nivel, $pessoa) {
         $this->userName = $userName;
         $this->senha = $senha;
