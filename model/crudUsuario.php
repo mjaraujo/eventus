@@ -9,60 +9,22 @@
 namespace model;
 
 use config;
+
 include_once '../config/DB.php';
 
+abstract class crudUsuario extends config\DB {
 
-abstract class crudPessoa extends config\DB {
+    protected $tabela = 'usuarios';
 
-    private $tabela;
-    private $nome;
-    private $tipo;
-    private $identificacao;
-    private $cpf;
-    private $dtNasc;
-
-    public function getNome() {
-        return $this->nome;
-    }
-
-    public function setNome($nome) {
-        $this->nome = $nome;
-    }
-
-    public function getCpf() {
-        return $this->cpf;
-    }
-
-    public function setCpf($cpf) {
-        $this->cpf = $cpf;
-    }
-
-    public function getDtNasc() {
-        return $this->dtNasc;
-    }
-
-    public function setDtNasc($dtNasc) {
-        $this->dtNascc = $dtNasc;
-    }
-
-    public function getIdentificacao() {
-        return $this->identificacao;
-    }
-
-    public function setIdentificacao($identificacao) {
-        $this->identificacao = $identificacao;
-    }
-
-    public function getTipo() {
-        return $this->tipo;
-    }
-
-    public function setTipo($tipo) {
-        $this->tipo = $tipo;
-    }
-
-    function __construct() {
-        
+    public function insert($userName, $senha, $nivel, $pessoa) {
+        $sql = "INSERT INTO $this->tabela (usuUsername, usuSenha, usuNivel, usuPessoa) 
+            values(:usuUsername, :usuSenha, :usuNivel, :usuPessoa)";
+        $stm = config\DB::prepare($sql);
+        $stm->bindParam(':usuUsername', $userName);
+        $stm->bindParam(':usuSenha', $senha);
+        $stm->bindParam(':usuNivel', $nivel);
+        $stm->bindParam(':usuPessoa', $pessoa);
+        return $stm->execute();
     }
 
 }

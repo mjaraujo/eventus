@@ -9,72 +9,58 @@
 namespace model;
 
 /**
- * Description of Pessoa
+ * Description of Usuario
  *
  * @author marcio
  */
 use config;
 
-require_once 'crudPessoa.php';
+require_once 'crudUsuario.php';
 
-class Pessoa extends crudPessoa {
+class Usuario extends crudUsuario {
 
-    private $nome = "";
-    private $tipo = '1';
-    private $cpf ="";
-    private $identificacao ="";
-    
-    
-    function getNome() {
-        return $this->nome;
+    private $userName = "";
+    private $senha = "";
+    private $nivel = 0;
+    private $pessoa = 0;
+
+    function getUserName() {
+        return $this->userName;
     }
 
-    function getTipo() {
-        return $this->tipo;
+    function getSenha() {
+        return $this->senha;
     }
 
-    function getCpf() {
-        return $this->cpf;
+    function getNivel() {
+        return $this->nivel;
     }
 
-    function getIdentificacao() {
-        return $this->identificacao;
+    function getPessoa() {
+        return $this->pessoa;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    function setUserName($userName) {
+        $this->userName = $userName;
     }
 
-    function setTipo($tipo) {
-        $this->tipo = $tipo;
+    function setSenha($senha) {
+        $this->senha = $senha;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
+    function setNivel($nivel) {
+        $this->nivel = $nivel;
     }
 
-    function setIdentificacao($identificacao) {
-        $this->identificacao = $identificacao;
+    function __construct($userName, $senha, $nivel, $pessoa) {
+        $this->userName = $userName;
+        $this->senha = $senha;
+        $this->nivel = $nivel;
+        $this->pessoa = $pessoa;
     }
 
-        function __construct() {
-        
+    public function inserirUsuario() {
+        parent::insert($this->userName, $this->senha, $this->nivel, $this->pessoa);
     }
 
-    protected $tabela = 'pessoas';
-
-    public function insert() {
-        $sql = "INSERT INTO $this->tabela (pesNome, pesTipo, pesIdentificacao, pesCPF) 
-            values(:pesNome, :pesTipo, :pesIdentificacao, :pesCPF)";
-        $stm = config\DB::prepare($sql);
-        $stm->bindParam(':pesNome', $this->nome);
-        $stm->bindParam(':pesTipo', $this->tipo);
-        $stm->bindParam(':pesCPF', $this->cpf);
-        $stm->bindParam(':pesIdentificacao', $this->identificacao);
-        return $stm->execute();
-    }
-    
-    
-
-    //put your code here
 }

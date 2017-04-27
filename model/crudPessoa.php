@@ -61,6 +61,7 @@ abstract class crudPessoa extends config\DB {
         $this->tipo = $tipo;
     }
 
+    
     function __construct() {
         
     }
