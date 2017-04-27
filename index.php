@@ -63,7 +63,8 @@ function __autoload($class) {
                         <li><a href="#Section-2">Inscrições</a></li>
                         <li><a href="#Section-3">Galeria</a></li>
                         <li><a href="#Section-4">Chamada</a></li>
-                        <li><a href="#Section-5">Contato</a></li>
+                        <li><a href="#Section-5">Chamada</a></li>
+                        <li><a href="#Section-6">Contato</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
