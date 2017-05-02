@@ -14,7 +14,7 @@ function __autoload($class) {
 }
 
 
-//use config;
+use config;
 include_once '../config/DB.php';
 
 
