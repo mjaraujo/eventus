@@ -29,8 +29,8 @@ function __autoload($class) {
                             <li class="parent">
                                 <a href="#">Cadastros</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/view/pages/cadPessoa.php"><i class="icon-wrench"></i> Pessoas</a></li>
-                                    <li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-credit-card"></i>  Pricing Tables</a></li>
+                                    <li><a href="view/pages/cadPessoa.php"><i class="icon-wrench"></i> Pessoas</a></li>
+                                    <li><a href="cadUsuarioForm.php"><i class="icon-credit-card"></i>  Usuários</a></li>
                                     <li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-gift"></i> Icons</a></li>
                                     <li>
                                         <a class="parent" href="#"><i class="icon-file-alt"></i> Pages</a>

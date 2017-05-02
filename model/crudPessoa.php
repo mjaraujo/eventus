@@ -8,14 +8,9 @@
 
 namespace model;
 
-function __autoload($class) {
-       echo 'classes/' . $class . '.php <br><br>';
-       require_once  $class . '.php';
-}
-
 
 use config;
-include_once '../config/DB.php';
+require_once '../config/DB.php';
 
 
 abstract class crudPessoa extends \config\DB {

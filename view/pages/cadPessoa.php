@@ -1,9 +1,9 @@
 <?php
-//    use model;
-include_once '../../model/Pessoa.php';
-
-
+function __autoload($class) {
+    require_once $class . '.php';
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
