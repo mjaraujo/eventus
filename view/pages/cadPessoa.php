@@ -19,12 +19,15 @@ function __autoload($class) {
     <body>
 
         <legend class="h3">Formulário de inscrição</legend>
-    <form method="post" action="controller/cadUsuario.php" target="new" name="frmInsc" id="frmInsc">
-        <input name="userName" class="col-lg-6 leftradius" size="50" type="text" id="userName"  placeholder="Usuário">
+        <form method="post" action="../../controller/cadPessoa.php" target="new" name="frmInsc" id="frmInsc">
+        <input type="hidden" name="cadastrar" value="pessoa">
+        <input name="nome" type="text" class="form-control" placeholder="nome">
+        <input name="cpf" type="text" class="form-control" placeholder="cpf">
+        <input name="documento" type="text" class="form-control" placeholder="documento">
         <input name="senha" type="password" class="form-control" placeholder="senha">
         <div>
             <fieldset style="width: 500px">
-                <p><select name="nivel" id="tipo"  class="col-lg-6 leftradius">
+                <p><select name="tipo" id="tipo"  class="col-lg-6 leftradius">
                         <option value=0>Administrador</option>
                         <option value=1>Colaborador</option>
                         <option value=2>Organizador</option>
@@ -32,7 +35,7 @@ function __autoload($class) {
             </fieldset>
         </div>
   
-        <input name="cadastrarUsuario" type="submit" class="btn btn-success" value="cadastrarUsuario">
+        <input name="cadastrarUsuario" type="submit" class="btn btn-success" value="cadastrarPessoa">
     </form>
 
     </body>

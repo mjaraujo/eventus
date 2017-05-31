@@ -20,9 +20,9 @@ if (isset($_POST['cadastrarUsuario'])):
     $nivel = $_POST['nivel'];
     $pessoa = $_POST['pessoa'];
 
-    $usuario = new model\Usuario($userName, $senha, $nivel, $pessoa);
+    $pessoa = new model\Usuario($userName, $senha, $nivel, $pessoa);
     
-    if ($usuario->insert()) {
+    if ($pessoa->insert()) {
         echo 'pessoa cadastrada!';
     }
 endif;
@@ -33,7 +33,7 @@ if (isset($_POST['excluir_ui'])) {
 
     $id = $_POST['id_ui'];
 
-    $usuario->delete($id);
+    $pessoa->delete($id);
 }
 
 // Alterar Usuario
@@ -42,10 +42,10 @@ if (isset($_POST['alterar'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
 
-    $usuario->setNome($nome);
-    $usuario->setEmail($email);
+    $pessoa->setNome($nome);
+    $pessoa->setEmail($email);
 
-    $usuario->update($id);
+    $pessoa->update($id);
 }
 ?>
 

@@ -8,8 +8,8 @@
  */
 
 namespace model;
-
-require_once 'config/DB.php';
+use config;
+require_once '../config/DB.php';
 
 abstract class crudUsuario extends config\DB {
 

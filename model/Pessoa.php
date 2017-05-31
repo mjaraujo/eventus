@@ -13,18 +13,13 @@ namespace model;
  *
  * @author marcio
  */
-use config;
+class Pessoa {
 
-require_once 'crudPessoa.php';
+    protected $nome = "";
+    protected $tipo = '1';
+    protected $cpf = "";
+    protected $identificacao = "";
 
-class Pessoa extends crudPessoa {
-
-    private $nome = "";
-    private $tipo = '1';
-    private $cpf ="";
-    private $identificacao ="";
-    
-    
     function getNome() {
         return $this->nome;
     }
@@ -57,24 +52,20 @@ class Pessoa extends crudPessoa {
         $this->identificacao = $identificacao;
     }
 
-        function __construct() {
+    function __construct() {
         
     }
 
     protected $tabela = 'pessoas';
 
-    public function insert() {
-        $sql = "INSERT INTO $this->tabela (pesNome, pesTipo, pesIdentificacao, pesCPF) 
-            values(:pesNome, :pesTipo, :pesIdentificacao, :pesCPF)";
-        $stm = config\DB::prepare($sql);
-        $stm->bindParam(':pesNome', $this->nome);
-        $stm->bindParam(':pesTipo', $this->tipo);
-        $stm->bindParam(':pesCPF', $this->cpf);
-        $stm->bindParam(':pesIdentificacao', $this->identificacao);
-        return $stm->execute();
-    }
-    
-    
+    function getTabela() {
+        return $this->tabela;
+    }   
 
+    function setTabela($tabela) {
+        $this->tabela = $tabela;
+    }
+
+        
     //put your code here
 }

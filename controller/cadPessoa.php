@@ -1,6 +1,7 @@
 <?php
 //    use model;
 include_once ('../model/Pessoa.php');
+include_once ('../dao/PessoaDao.php');
 
 function __autoload($class) {
     //   echo 'classes/' . $class . '.php <br><br>';
@@ -10,25 +11,35 @@ function __autoload($class) {
 
 
 <?php
-$usuario = new model\Pessoa();
 
+$pessoa = new model\Pessoa();
+$pessoaDao = new dao\PessoaDao();
 // Cadastro de Usuario
 if (isset($_POST['cadastrar'])):
 
-    $nome = $_POST['nome'];
-    $senha = $_POST['senha'];
-    $cpf = $_POST['cpf'];
-    $documento = $_POST['documento'];
-    $tipo = $_POST['tipo'];
+    try {
 
-    $usuario->setNome($nome);
-    $usuario->setCpf($cpf);
-    $usuario->setIdentificacao($documento);
-    $usuario->setTipo($tipo);
 
-    if ($usuario->insert()) {
-        echo 'pessoa cadastrada!';
+        $nome = $_POST['nome'];
+        $senha = $_POST['senha'];
+        $cpf = $_POST['cpf'];
+        $documento = $_POST['documento'];
+        $tipo = $_POST['tipo'];
+
+        $pessoa->setNome($nome);
+        $pessoa->setCpf($cpf);
+        $pessoa->setIdentificacao($documento);
+        $pessoa->setTipo($tipo);
+
+       
+
+        if ($pessoaDao->inserir($pessoa)) {
+            echo 'pessoa cadastrada!';
+        }
+    } catch (Exception $exc) {
+        echo $exc->getTraceAsString();
     }
+
 endif;
 
 
@@ -37,7 +48,7 @@ if (isset($_POST['excluir_ui'])) {
 
     $id = $_POST['id_ui'];
 
-    $usuario->delete($id);
+    $pessoa->delete($id);
 }
 
 // Alterar Usuario
@@ -46,10 +57,10 @@ if (isset($_POST['alterar'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
 
-    $usuario->setNome($nome);
-    $usuario->setEmail($email);
+    $pessoa->setNome($nome);
+    $pessoa->setEmail($email);
 
-    $usuario->update($id);
+    $pessoa->update($id);
 }
 ?>
 
